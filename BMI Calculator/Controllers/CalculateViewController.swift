@@ -17,6 +17,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet var weightSlider: UISlider!
     
     var calculatorBrain = CalculatorBrain()
+    var locationFetcher = LocationFetcher()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class CalculateViewController: UIViewController {
             destinationVC.bmiValue =  calculatorBrain.getBMIValue()
             destinationVC.advice = calculatorBrain.getAdvice()
             destinationVC.color = calculatorBrain.getColor()
+            destinationVC.goLocation = calculatorBrain.getGoLocation()
+            destinationVC.locationFetcher = locationFetcher
             
         }
     }

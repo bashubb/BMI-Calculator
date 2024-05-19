@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "calculate_background_BMI.png",
+      "filename" : "IconBMI_LaunchScreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "calculate_background_BMI@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "calculate_background_BMI@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
