@@ -21,12 +21,11 @@ class ResultsViewController: UIViewController {
         if goLocation == "Gym" {
             return "Find a GYM!"
         } else {
-            return "Find a FASTFOOD !"
+            return "Find a FAST FOOD !"
         }
     }
     
     @IBOutlet var bmiLabel: UILabel!
-    @IBOutlet var backGround: UIImageView!
     @IBOutlet var adviceLabel: UILabel!
     @IBOutlet var goToLocationButtonLabel: UIButton!
     
@@ -63,7 +62,6 @@ class ResultsViewController: UIViewController {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = location
         
-        // Set the region to an associated map view's region.
         searchRequest.region = myRegion
 
         let search = MKLocalSearch(request: searchRequest)

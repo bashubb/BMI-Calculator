@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "calculate_background_BMI.png",
+      "filename" : "background.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "calculate_background_BMI@2x.png",
+      "filename" : "background@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "calculate_background_BMI@3x.png",
+      "filename" : "background@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

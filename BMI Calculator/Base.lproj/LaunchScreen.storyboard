@@ -25,7 +25,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.96082550290000002" green="0.95671552419999994" blue="0.96862894300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.99999994039999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="pOa-JQ-UiF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Te-Pd-u3O"/>
                             <constraint firstItem="pOa-JQ-UiF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qKR-P0-AUh"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IconBMI_LaunchScreen" width="777" height="775"/>
+        <image name="IconBMI_LaunchScreen" width="551" height="631"/>
     </resources>
 </document>
