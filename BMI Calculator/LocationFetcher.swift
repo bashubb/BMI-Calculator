@@ -1,4 +1,5 @@
 import CoreLocation
+import MapKit
 
 class LocationFetcher: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
@@ -8,31 +9,9 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         super.init()
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
-        print("Requested authorization")
+        manager.startUpdatingLocation()
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            // Authorization not determined yet
-            print("Authorization not determined")
-        case .restricted, .denied:
-            // Authorization denied or restricted
-            print("Authorization denied or restricted")
-        case .authorizedWhenInUse, .authorizedAlways:
-            // Authorization granted
-            if CLLocationManager.locationServicesEnabled() {
-                manager.startUpdatingLocation()
-                print("Started updating location")
-            } else {
-                print("Location services are not enabled")
-            }
-        @unknown default:
-            // Handle future cases
-            print("Unknown authorization status")
-        }
-    }
-
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
         if let latitude = location?.latitude, let longitude = location?.longitude {
@@ -42,5 +21,26 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to get location: \(error.localizedDescription)")
+    }
+    
+    func findPlaces(for location: String, fetcher: LocationFetcher?) {
+        // check location
+        guard let myLocation = fetcher?.location else { return }
+        let myRegion =  MKCoordinateRegion(center: myLocation, latitudinalMeters: 5_000, longitudinalMeters: 5_000)
+        
+        // find places
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = location
+        searchRequest.region = myRegion
+
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+        guard let response = response else {
+            print("no places")
+            return
+        }
+        // Open map with places
+        MKMapItem.openMaps(with: response.mapItems)
+        }
     }
 }

@@ -21,7 +21,6 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func heightSlider(_ sender: UISlider) {
@@ -38,8 +37,30 @@ class CalculateViewController: UIViewController {
         let height = heightSlider.value
         let weight = weightSlider.value
         
-        calculatorBrain.calculateBMI(height: height, weight: weight)
-        self.performSegue(withIdentifier: "goToResult", sender: self)
+        // check if there's value to count
+        if height == 0.0 || weight == 0 {
+            zeroValueAlert()
+        } else {
+            calculatorBrain.calculateBMI(height: height, weight: weight)
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+        }
+        
+        // haptic
+        let generator = UIImpactFeedbackGenerator(style: .light)
+                    generator.impactOccurred()
+    }
+    
+    func zeroValueAlert() {
+        let title = "Ooops..."
+        let message = "You can't weight 0 kilograms or be 0 meters tall! Try again!"
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(ac, animated: true)
+        
+        // haptic
+        let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.warning)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
