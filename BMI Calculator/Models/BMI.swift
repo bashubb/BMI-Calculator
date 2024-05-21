@@ -3,8 +3,6 @@
 //  BMI Calculator
 //
 //  Created by HubertMac on 15/05/2024.
-//  Copyright © 2024 Angela Yu. All rights reserved.
-//
 
 import UIKit
 
