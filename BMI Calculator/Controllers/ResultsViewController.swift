@@ -29,6 +29,10 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        if goLocation == "Gym" {
+            // play haptic
+            generateVibration()
+        }
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             print("wracam z tła")
@@ -50,11 +54,6 @@ class ResultsViewController: UIViewController {
         
         bmiLabel.text = bmiValue
         adviceLabel.text = advice
-        
-        if goLocation == "Gym" {
-            // play haptic
-            generateVibration()
-        }
     }
     
     // go back
@@ -78,16 +77,11 @@ class ResultsViewController: UIViewController {
         guard locationFetcher?.manager.authorizationStatus != .denied  else {
             return "Enable Locations"
         }
-        guard locationFetcher?.manager.authorizationStatus != .notDetermined else {
-            return "Enable Locations"
-        }
-        
         guard goLocation == "Gym"  else {
             return "Find a FAST FOOD !"
         }
         
         return "Find a GYM!"
-        
     }
     
     func setGoToLocationButtonLabel() {
