@@ -35,15 +35,14 @@ class ResultsViewController: UIViewController {
         }
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
-            print("wracam z tła")
             self.setUI()
         }
     }
     
     deinit {
-            if let observer = observer {
-                NotificationCenter.default.removeObserver(observer)
-            }
+        if let observer = observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     func setUI() {
@@ -74,14 +73,18 @@ class ResultsViewController: UIViewController {
     }
     
      func goLocationButtonTitle() -> String {
-        guard locationFetcher?.manager.authorizationStatus != .denied  else {
+        let status = locationFetcher?.manager.authorizationStatus
+         
+         switch status {
+         case .authorizedAlways, .authorizedWhenInUse:
+             if goLocation == "Gym" {
+                 return "Find a GYM!"
+             } else {
+                 return "Find a FAST FOOD !"
+             }
+         case .none, .some(.notDetermined), .some(.restricted), .some(.denied), .some(_):
             return "Enable Locations"
-        }
-        guard goLocation == "Gym"  else {
-            return "Find a FAST FOOD !"
-        }
-        
-        return "Find a GYM!"
+         }
     }
     
     func setGoToLocationButtonLabel() {
@@ -140,7 +143,6 @@ class ResultsViewController: UIViewController {
             let player = try engine?.makePlayer(with: pattern)
             try player?.start(atTime: 0)
         } catch {
-            // add your own meaningful error handling here!
             print(error.localizedDescription)
         }
     }

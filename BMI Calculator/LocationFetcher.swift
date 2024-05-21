@@ -14,9 +14,6 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
-        if let latitude = location?.latitude, let longitude = location?.longitude {
-            print("Location updated: \(latitude), \(longitude)")
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -36,7 +33,6 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         let search = MKLocalSearch(request: searchRequest)
         search.start { (response, error) in
         guard let response = response else {
-            print("no places")
             return
         }
         // Open map with places

@@ -37,7 +37,7 @@ struct CalculatorBrain {
         
         switch bmiValue {
         case ..<18.5:
-            advice = "Eat more pies!"
+            advice = "Eat more!"
             color = #colorLiteral(red: 0.4549019608, green: 0.7254901961, blue: 1, alpha: 1)
             goLocation = "Fast food"
         case 18.5...24.9:
