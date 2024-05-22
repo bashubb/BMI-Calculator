@@ -2,12 +2,12 @@
 //  CalculateViewController.swift
 //  BMI Calculator
 //
-//  Created by Angela Yu on 21/08/2019.
 
 import UIKit
 
 class CalculateViewController: UIViewController {
     
+    @IBOutlet var helpButon: UIButton!
     @IBOutlet var heightLabel: UILabel!
     @IBOutlet var weightLabel: UILabel!
 
@@ -19,6 +19,25 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setHelpButtonUI()
+    }
+    
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+    
+        let title = "Info"
+        let info = """
+        BMI Watcher calculate BMI according to the formula
+        BMI = (kg/m2)
+        underweight < 18.5
+        normal weight 18.5 - 24.9
+        overweight > 25
+        """
+       
+        let ac = UIAlertController(title: title, message: info, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: "More info", style: .default, handler: moreInfoLink))
+        self.present(ac, animated: true)
     }
 
     @IBAction func heightSlider(_ sender: UISlider) {
@@ -42,10 +61,20 @@ class CalculateViewController: UIViewController {
             calculatorBrain.calculateBMI(height: height, weight: weight)
             self.performSegue(withIdentifier: "goToResult", sender: self)
         }
-        
         // haptic
         let generator = UIImpactFeedbackGenerator(style: .light)
                     generator.impactOccurred()
+    }
+    
+    func moreInfoLink(action: UIAlertAction! = nil) {
+        let url = URL(string: "https://en.wikipedia.org/wiki/Body_mass_index")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    func setHelpButtonUI() {
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular, scale:.medium)
+        let helpButtonImage = UIImage(systemName: "questionmark.circle", withConfiguration: imageConfig)
+        helpButon.setImage(helpButtonImage, for: .normal)
     }
     
     func zeroValueAlert() {

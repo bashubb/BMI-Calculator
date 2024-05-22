@@ -34,9 +34,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need Your location to provide better experience!</string>
+	<string>Turning on location services allows us to show You some interesting places, once You calculate your BMI.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need Your location to provide better experience!</string>
+	<string>Turning on location services allows us to show You some interesting places, once You calculate your BMI. </string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
