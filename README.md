@@ -15,6 +15,8 @@ Download
 --------
 
 The BMI Watcher app is available on the App Store. Download it now and start your journey towards better health with a smile! 
+<br>
+
 <a href="https://apps.apple.com/pl/app/bmi-watcher/id6502956154?l"><img src="https://github.com/bashubb/BMI-Watcher/blob/main/download-on-the-app-store-apple-logo-svgrepo-com.png"></a>
 
 
