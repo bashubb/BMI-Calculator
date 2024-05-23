@@ -338,7 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F43F5V3HNZ;
-				INFOPLIST_FILE = "BMI Calculator/Info.plist";
+				INFOPLIST_FILE = "BMI Watcher/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BMI Watcher";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -365,7 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F43F5V3HNZ;
-				INFOPLIST_FILE = "BMI Calculator/Info.plist";
+				INFOPLIST_FILE = "BMI Watcher/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BMI Watcher";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
