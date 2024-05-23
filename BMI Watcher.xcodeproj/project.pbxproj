@@ -31,9 +31,9 @@
 		AD0B9F87230D61840065EFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B502B36E2BFA00FD00BC6495 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		B55CFFA12BFBC3010017BAC2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		B5CF7AAE2BF4BBE700A8D2BF /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsViewController.swift; path = "BMI Calculator/Controllers/ResultsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B5CF7AB02BF4C38D00A8D2BF /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorBrain.swift; path = "BMI Calculator/Models/CalculatorBrain.swift"; sourceTree = SOURCE_ROOT; };
-		B5CF7AC72BF4D52300A8D2BF /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BMI.swift; path = "BMI Calculator/Models/BMI.swift"; sourceTree = SOURCE_ROOT; };
+		B5CF7AAE2BF4BBE700A8D2BF /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsViewController.swift; path = "BMI Watcher/Controllers/ResultsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B5CF7AB02BF4C38D00A8D2BF /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorBrain.swift; path = "BMI Watcher/Models/CalculatorBrain.swift"; sourceTree = SOURCE_ROOT; };
+		B5CF7AC72BF4D52300A8D2BF /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BMI.swift; path = "BMI Watcher/Models/BMI.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		AD0B9F6D230D61800065EFD9 = {
 			isa = PBXGroup;
 			children = (
-				AD0B9F78230D61800065EFD9 /* BMI Calculator */,
+				AD0B9F78230D61800065EFD9 /* BMI Watcher */,
 				AD0B9F77230D61800065EFD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,7 +63,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD0B9F78230D61800065EFD9 /* BMI Calculator */ = {
+		AD0B9F78230D61800065EFD9 /* BMI Watcher */ = {
 			isa = PBXGroup;
 			children = (
 				B502B36E2BFA00FD00BC6495 /* LocationFetcher.swift */,
@@ -77,7 +77,7 @@
 				AD0B9F87230D61840065EFD9 /* Info.plist */,
 				B55CFFA12BFBC3010017BAC2 /* Settings.bundle */,
 			);
-			path = "BMI Calculator";
+			path = "BMI Watcher";
 			sourceTree = "<group>";
 		};
 		AD0B9F8D230D63D70065EFD9 /* Controllers */ = {
@@ -346,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bashubb.BMICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -373,7 +373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bashubb.BMICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
